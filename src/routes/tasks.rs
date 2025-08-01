@@ -1,4 +1,4 @@
-use actix_web::web::{self, route};
+use actix_web::web::{self};
 use crate::controllers::task;
 
 pub fn config(cfg: &mut web::ServiceConfig) {

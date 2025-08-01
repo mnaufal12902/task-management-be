@@ -1,6 +1,6 @@
 use actix_cors::Cors;
 use actix_web::{App, HttpServer, http::header, web};
-use config::{mongodb::establish_mongodb_connection, mysql::establish_mysql_connection};
+use config::{mysql::establish_mysql_connection};
 use dotenv::dotenv;
 use env_logger::Env;
 use middleware::auth::AuthMiddleware;
@@ -26,9 +26,6 @@ async fn main() -> std::io::Result<()> {
         .expect("Invalid SERVER_PORT");
 
     let mysql_conn = establish_mysql_connection().await;
-    // let mongodb_conn = establish_mongodb_connection()
-    //     .await
-    //     .expect("Failed to connect to MongoDB");
 
     let secret_key = env::var("SECRET_KEY").unwrap();
 

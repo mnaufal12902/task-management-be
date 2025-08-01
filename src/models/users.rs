@@ -57,7 +57,6 @@ impl Role {
     pub fn valid_permission(&self) -> bool {
         match self {
             Role::Ketua | Role::Sekretaris | Role::Anggota => true,
-            _ => false,
         }
     }
 }
